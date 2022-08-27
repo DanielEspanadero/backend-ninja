@@ -20,7 +20,7 @@ public class ExampleControllerJava {
 //	Primera forma
 	@GetMapping("/exampleString")
 	public String exampleString(Model model) {
-		model.addAttribute("peole", getPeople());
+		model.addAttribute("people", getPeople());
 		return EXAMPLE_VIEW;
 	}
 
@@ -28,8 +28,8 @@ public class ExampleControllerJava {
 	
 	@GetMapping("/exampleMAV")
 	public ModelAndView exampleMAV() {
-		ModelAndView mav = new ModelAndView("example");
-		mav.addObject("peole", getPeople());
+		ModelAndView mav = new ModelAndView(EXAMPLE_VIEW);
+		mav.addObject("people", getPeople());
 		
 		return mav;
 	}
@@ -38,7 +38,7 @@ public class ExampleControllerJava {
 	private List <Person> getPeople(){
 		List<Person> people = new ArrayList<>();
 		
-		people.add(new Person("Jhon", 23));
+		people.add(new Person("Jon", 23));
 		people.add(new Person("Mikel", 27));
 		people.add(new Person("Eva", 43));
 		people.add(new Person("Peter", 33));		
